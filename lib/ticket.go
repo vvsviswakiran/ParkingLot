@@ -5,7 +5,7 @@ type Ticket struct {
 	CarParked  *Car
 }
 
-func CreateTicket(slotNo int, car Car) {
+func CreateTicket(slotNo int, car *Car) {
 	if slotNo < 1 {
 		panic("Slot number must be positive")
 	}
