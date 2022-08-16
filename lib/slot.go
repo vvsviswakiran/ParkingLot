@@ -6,5 +6,7 @@ type Slot struct {
 }
 
 func CreateSlot(slotNo int, availability bool) {
-
+	if slotNo < 1 {
+		panic("Slot number must be positive")
+	}
 }
