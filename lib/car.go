@@ -6,4 +6,7 @@ type Car struct {
 }
 
 func CreateCar(regNo, color string) {
+	if color == "" {
+		panic("Color cannot be an empty string")
+	}
 }
