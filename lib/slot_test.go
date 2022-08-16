@@ -11,4 +11,10 @@ func TestCreateSlot(t *testing.T) {
 			CreateSlot(123, true)
 		})
 	})
+
+	t.Run("should panic when slot number passed is less than 1", func(t *testing.T) {
+		assert.Panics(t, func() {
+			CreateSlot(-1, true)
+		})
+	})
 }
