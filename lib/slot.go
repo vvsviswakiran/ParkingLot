@@ -5,8 +5,9 @@ type Slot struct {
 	Availability bool
 }
 
-func CreateSlot(slotNo int, availability bool) {
+func CreateSlot(slotNo int, availability bool) Slot {
 	if slotNo < 1 {
 		panic("Slot number must be positive")
 	}
+	return Slot{slotNo, availability}
 }
