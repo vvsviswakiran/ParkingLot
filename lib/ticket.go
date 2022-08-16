@@ -6,5 +6,5 @@ type Ticket struct {
 }
 
 func CreateTicket(slotNo int, car Car) {
-	
+
 }
