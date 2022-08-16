@@ -17,4 +17,10 @@ func TestCreateCar(t *testing.T) {
 			CreateCar("AP03AL2345", "")
 		})
 	})
+
+	t.Run("should panic when length of registration number is not equal to 10", func(t *testing.T) {
+		assert.Panics(t, func() {
+			CreateCar("A", "white")
+		})
+	})
 }
