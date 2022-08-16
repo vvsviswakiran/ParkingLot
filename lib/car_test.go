@@ -11,4 +11,10 @@ func TestCreateCar(t *testing.T) {
 			CreateCar("AP03AL4067", "Green")
 		})
 	})
+
+	t.Run("should panic when color of car is empty", func(t *testing.T) {
+		assert.Panics(t, func() {
+			CreateCar("AP03AL2345", "")
+		})
+	})
 }
