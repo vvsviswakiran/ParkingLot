@@ -12,7 +12,7 @@ func TestCreateTicket(t *testing.T) {
 		})
 	})
 
-	t.Run("should panic when slot number is less than one", func(t *testing.T) {
+	t.Run("should panic when slot number is less than 1", func(t *testing.T) {
 		assert.Panics(t, func() {
 			CreateTicket(-4, Car{"ER09AL3456", "White"})
 		})
