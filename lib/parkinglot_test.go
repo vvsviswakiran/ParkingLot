@@ -117,3 +117,14 @@ func TestRegistrationNumbersOfCarsWithGivenColor(t *testing.T) {
 		})
 	})
 }
+
+func TestSlotNumberOfAllSlotsHavingACarWithGivenColor(t *testing.T) {
+	t.Run("should panic when there are no cars of given color", func(t *testing.T) {
+		parkingLot := CreateParkingLot(1)
+		car := CreateCar("AP90GH2345", "White")
+		parkingLot.AddCarAndIssueTicket(&car)
+		assert.NotPanics(t, func() {
+			SlotNumberOfAllSlotsHavingACarWithGivenColor(parkingLot, "Green")
+		})
+	})
+}
