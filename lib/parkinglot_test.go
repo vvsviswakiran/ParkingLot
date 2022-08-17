@@ -6,7 +6,7 @@ import (
 )
 
 func TestCreateParkingLot(t *testing.T) {
-	t.Run("should not panic when creating a parking lot object", func(t *testing.T) {
+	t.Run("should not panic when creating a parking lot", func(t *testing.T) {
 		assert.NotPanics(t, func() {
 			CreateParkingLot(12)
 		})
