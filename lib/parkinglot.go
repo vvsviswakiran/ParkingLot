@@ -54,5 +54,16 @@ func (parkingLot *ParkingLot) DeleteTicketAndFreeSlot(ticket *Ticket) {
 }
 
 func RegistrationNumbersOfCarsWithGivenColor(parkingLot ParkingLot, color string) []string {
+	var ListOfRegistrationNumbers []string
+	CountOfCarsWithGivenColor := 0
+	for i := range parkingLot.Slots {
+		if parkingLot.Slots[i].Availability == false && parkingLot.Slots[i].CarParked.Color == color {
+			CountOfCarsWithGivenColor += 1
+			ListOfRegistrationNumbers = append(ListOfRegistrationNumbers, parkingLot.Slots[i].CarParked.RegistrationNumber)
+		}
+	}
+	if len(ListOfRegistrationNumbers) > 0 {
+		return ListOfRegistrationNumbers
+	}
 	panic("No cars of given color found")
 }
