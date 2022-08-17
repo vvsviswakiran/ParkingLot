@@ -43,5 +43,5 @@ func SlotNumberOfCarWithGivenRegistrationNumber(parkingLot ParkingLot, regNo str
 			return parkingLot.Slots[i].SlotNumber
 		}
 	}
-	return 0
+	panic("Car not found")
 }
