@@ -22,3 +22,9 @@ Due to government regulation, the system should provide me with the ability to f
 ## Environment
 
 * go version 1.19
+
+## Test Instructions
+
+To execute test cases, run this command in lib directory
+
+```$ go test```
