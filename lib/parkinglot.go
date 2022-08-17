@@ -38,5 +38,10 @@ func SlotNumberOfCarWithGivenRegistrationNumber(parkingLot ParkingLot, regNo str
 	if len(regNo) != 10 {
 		panic("Length of registration number must be 10")
 	}
+	for i := range parkingLot.Slots {
+		if parkingLot.Slots[i].CarParked.RegistrationNumber == regNo {
+			return parkingLot.Slots[i].SlotNumber
+		}
+	}
 	return 0
 }
