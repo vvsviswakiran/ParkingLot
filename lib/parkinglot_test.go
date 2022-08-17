@@ -11,4 +11,10 @@ func TestCreateParkingLot(t *testing.T) {
 			CreateParkingLot(12)
 		})
 	})
+
+	t.Run("should panic when number of slots is negative", func(t *testing.T) {
+		assert.Panics(t, func() {
+			CreateParkingLot(-2)
+		})
+	})
 }
