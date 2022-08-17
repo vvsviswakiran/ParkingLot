@@ -35,5 +35,8 @@ func (parkingLot *ParkingLot) AddCarAndIssueTicket(car *Car) Ticket {
 }
 
 func SlotNumberOfCarWithGivenRegistrationNumber(parkingLot ParkingLot, regNo string) int {
+	if len(regNo) != 10 {
+		panic("Length of registration number must be 10")
+	}
 	return 0
 }
