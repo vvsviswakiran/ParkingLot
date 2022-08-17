@@ -50,4 +50,5 @@ func (parkingLot *ParkingLot) DeleteTicketAndFreeSlot(ticket *Ticket) {
 	if ticket == nil {
 		panic("Invalid ticket")
 	}
+	parkingLot.Slots[ticket.SlotNumber-1].Availability = true
 }
