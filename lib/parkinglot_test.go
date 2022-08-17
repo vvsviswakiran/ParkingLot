@@ -88,4 +88,12 @@ func TestDeleteTicketAndFreeSlot(t *testing.T) {
 			parkingLot.DeleteTicketAndFreeSlot(nil)
 		})
 	})
+
+	t.Run("should free slot and set slot as available", func(t *testing.T) {
+		parkingLot := CreateParkingLot(1)
+		car := CreateCar("AP90GH2345", "White")
+		ticket := parkingLot.AddCarAndIssueTicket(&car)
+		parkingLot.DeleteTicketAndFreeSlot(&ticket)
+		assert.Equal(t, true, parkingLot.Slots[ticket.SlotNumber-1].Availability)
+	})
 }
