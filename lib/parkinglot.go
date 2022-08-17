@@ -67,3 +67,7 @@ func RegistrationNumbersOfCarsWithGivenColor(parkingLot ParkingLot, color string
 	}
 	panic("No cars of given color found")
 }
+
+func SlotNumberOfAllSlotsHavingACarWithGivenColor(lot ParkingLot, color string) []int {
+	panic("No cars of given color found")
+}
