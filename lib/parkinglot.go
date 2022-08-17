@@ -52,3 +52,7 @@ func (parkingLot *ParkingLot) DeleteTicketAndFreeSlot(ticket *Ticket) {
 	}
 	parkingLot.Slots[ticket.SlotNumber-1].Availability = true
 }
+
+func RegistrationNumbersOfCarsWithGivenColor(parkingLot ParkingLot, color string) []string {
+	panic("No cars of given color found")
+}
