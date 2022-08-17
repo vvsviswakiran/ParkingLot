@@ -93,7 +93,18 @@ func TestDeleteTicketAndFreeSlot(t *testing.T) {
 		parkingLot := CreateParkingLot(1)
 		car := CreateCar("AP90GH2345", "White")
 		ticket := parkingLot.AddCarAndIssueTicket(&car)
-		parkingLot.DeleteTicketAndFreeSlot(&ticket)
+		parkingLot.DeleteTicketAndFreeSlot(ticket)
 		assert.Equal(t, true, parkingLot.Slots[ticket.SlotNumber-1].Availability)
+	})
+}
+
+func TestRegistrationNumbersOfCarsWithGivenColor(t *testing.T) {
+	t.Run("should panic when there are no cars of given color", func(t *testing.T) {
+		parkingLot := CreateParkingLot(1)
+		car := CreateCar("AP90GH2345", "White")
+		parkingLot.AddCarAndIssueTicket(&car)
+		assert.Panics(t, func() {
+			RegistrationNumbersOfCarsWithGivenColor(parkingLot, "Green")
+		})
 	})
 }
