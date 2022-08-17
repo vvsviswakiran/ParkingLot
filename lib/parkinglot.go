@@ -69,5 +69,14 @@ func RegistrationNumbersOfCarsWithGivenColor(parkingLot ParkingLot, color string
 }
 
 func SlotNumberOfAllSlotsHavingACarWithGivenColor(lot ParkingLot, color string) []int {
+	var ListOfSlotNumbers []int
+	for i := range lot.Slots {
+		if lot.Slots[i].Availability == false && lot.Slots[i].CarParked.Color == color {
+			ListOfSlotNumbers = append(ListOfSlotNumbers, lot.Slots[i].SlotNumber)
+		}
+	}
+	if len(ListOfSlotNumbers) > 0 {
+		return ListOfSlotNumbers
+	}
 	panic("No cars of given color found")
 }
