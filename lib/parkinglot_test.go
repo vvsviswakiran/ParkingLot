@@ -40,8 +40,9 @@ func TestFindNearestEmptySlot(t *testing.T) {
 func TestAddCarAndIssueTicket(t *testing.T) {
 	t.Run("should not panic if free slots are available", func(t *testing.T) {
 		parkingLot := CreateParkingLot(1)
+		car := CreateCar("AP90GH2345", "White")
 		assert.NotPanics(t, func() {
-			parkingLot.AddCarAndIssueTicket(CreateCar("AP90GH2345", "White"))
+			parkingLot.AddCarAndIssueTicket(&car)
 		})
 	})
 }

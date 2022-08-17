@@ -25,3 +25,11 @@ func FindNearestEmptySlot(parkingLot ParkingLot) int {
 	}
 	panic("No empty slots")
 }
+
+func (parkingLot *ParkingLot) AddCarAndIssueTicket(car *Car) Ticket {
+	freeSlot := FindNearestEmptySlot(*parkingLot)
+	parkingLot.Slots[freeSlot-1].CarParked = car
+	parkingLot.Slots[freeSlot-1].Availability = false
+	NewTicket := CreateTicket(parkingLot.Slots[freeSlot-1].SlotNumber, car)
+	return NewTicket
+}
