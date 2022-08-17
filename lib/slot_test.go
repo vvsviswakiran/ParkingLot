@@ -20,7 +20,7 @@ func TestCreateSlot(t *testing.T) {
 		})
 	})
 
-	t.Run("should not panic when slot is created with no car parked", func(t *testing.T) {
+	t.Run("should not panic when slot is created with nil as car object", func(t *testing.T) {
 		assert.NotPanics(t, func() {
 			CreateSlot(23, true, nil)
 		})
