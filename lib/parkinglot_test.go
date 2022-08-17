@@ -26,4 +26,10 @@ func TestFindNearestEmptySlot(t *testing.T) {
 			FindNearestEmptySlot(parkingLot)
 		})
 	})
+
+	t.Run("should not panic when there are free slots", func(t *testing.T) {
+		assert.NotPanics(t, func() {
+			FindNearestEmptySlot(CreateParkingLot(1))
+		})
+	})
 }
