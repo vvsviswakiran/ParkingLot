@@ -63,4 +63,13 @@ func TestSlotNumberOfCarWithGivenRegistrationNumber(t *testing.T) {
 		parkingLot.AddCarAndIssueTicket(&car)
 		assert.Less(t, 0, SlotNumberOfCarWithGivenRegistrationNumber(parkingLot, "AP90GH2345"))
 	})
+
+	t.Run("should panic if parking lot didnt have a car with that registration number", func(t *testing.T) {
+		parkingLot := CreateParkingLot(1)
+		car := CreateCar("AP90GH2345", "White")
+		parkingLot.AddCarAndIssueTicket(&car)
+		assert.Panics(t, func() {
+			SlotNumberOfCarWithGivenRegistrationNumber(parkingLot, "TN90GH2345")
+		})
+	})
 }
