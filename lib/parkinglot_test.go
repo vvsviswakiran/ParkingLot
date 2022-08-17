@@ -72,4 +72,11 @@ func TestSlotNumberOfCarWithGivenRegistrationNumber(t *testing.T) {
 			SlotNumberOfCarWithGivenRegistrationNumber(parkingLot, "TN90GH2345")
 		})
 	})
+
+	t.Run("should return the correct slot number of where the car with particular reg no is parked", func(t *testing.T) {
+		parkingLot := CreateParkingLot(1)
+		car := CreateCar("AP90GH2345", "White")
+		parkingLot.AddCarAndIssueTicket(&car)
+		assert.Equal(t, 1, SlotNumberOfCarWithGivenRegistrationNumber(parkingLot, "AP90GH2345"))
+	})
 }

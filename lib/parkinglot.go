@@ -40,7 +40,7 @@ func SlotNumberOfCarWithGivenRegistrationNumber(parkingLot ParkingLot, regNo str
 	}
 	for i := range parkingLot.Slots {
 		if parkingLot.Slots[i].CarParked.RegistrationNumber == regNo {
-			return parkingLot.Slots[i].SlotNumber
+			return 0
 		}
 	}
 	panic("Car not found")
