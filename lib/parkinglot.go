@@ -33,3 +33,7 @@ func (parkingLot *ParkingLot) AddCarAndIssueTicket(car *Car) Ticket {
 	NewTicket := CreateTicket(parkingLot.Slots[freeSlot-1].SlotNumber, car)
 	return NewTicket
 }
+
+func SlotNumberOfCarWithGivenRegistrationNumber(parkingLot ParkingLot, regNo string) int {
+	return 0
+}

@@ -46,3 +46,14 @@ func TestAddCarAndIssueTicket(t *testing.T) {
 		})
 	})
 }
+
+func TestSlotNumberOfCarWithGivenRegistrationNumber(t *testing.T) {
+	t.Run("should panic if registration number is not of length 10", func(t *testing.T) {
+		parkingLot := CreateParkingLot(1)
+		car := CreateCar("AP90GH2345", "White")
+		parkingLot.AddCarAndIssueTicket(&car)
+		assert.Panics(t, func() {
+			SlotNumberOfCarWithGivenRegistrationNumber(parkingLot, "")
+		})
+	})
+}
