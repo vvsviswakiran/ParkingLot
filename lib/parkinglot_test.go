@@ -80,3 +80,14 @@ func TestSlotNumberOfCarWithGivenRegistrationNumber(t *testing.T) {
 		assert.Equal(t, 1, SlotNumberOfCarWithGivenRegistrationNumber(parkingLot, "AP90GH2345"))
 	})
 }
+
+func TestDeleteTicketAndFreeSlot(t *testing.T) {
+	t.Run("should panic when invalid ticket is passed", func(t *testing.T) {
+		parkingLot := CreateParkingLot(1)
+		car := CreateCar("AP90GH2345", "White")
+		ticket := parkingLot.AddCarAndIssueTicket(&car)
+		assert.Panics(t, func() {
+			parkingLot.DeleteTicketAndFreeSlot(nil)
+		})
+	})
+}
