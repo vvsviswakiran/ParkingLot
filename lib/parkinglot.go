@@ -45,3 +45,9 @@ func SlotNumberOfCarWithGivenRegistrationNumber(parkingLot ParkingLot, regNo str
 	}
 	panic("Car not found")
 }
+
+func (parkingLot *ParkingLot) DeleteTicketAndFreeSlot(ticket *Ticket) {
+	if ticket == nil {
+		panic("Invalid ticket")
+	}
+}
