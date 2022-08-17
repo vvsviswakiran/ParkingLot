@@ -20,7 +20,7 @@ func CreateParkingLot(TotalSlots int) ParkingLot {
 func FindNearestEmptySlot(parkingLot ParkingLot) int {
 	for i := range parkingLot.Slots {
 		if parkingLot.Slots[i].Availability == true {
-			return i
+			return parkingLot.Slots[i].SlotNumber
 		}
 	}
 	panic("No empty slots")
